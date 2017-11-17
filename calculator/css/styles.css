@@ -1,0 +1,10 @@
+/*stylesheet for calculator app*/
+
+body, html {
+  margin: 0px;
+  padding: 0px;
+}
+
+p {
+  color: blue;
+}
