@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css?family=Dosis');
+@import url('https://fonts.googleapis.com/css?family=Muli');
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	height: 100%;
+}
+
+body {
+	min-height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	background-color: #6BC0FF;
+}
+
+#outer {
+	min-height: 100%;
+	align-items: center;
+	min-width: 100%;
+	margin: auto;
+}
+
+
+#quotebox {
+	max-width: 55%;
+	max-height: 70%;
+	margin: 5% auto 15% auto;
+	background-color: #FFFFFF;
+	box-shadow: 5px 5px #666666;
+	color: #6BC0FF;
+}
+
+#top {
+	width: 100%;
+	height: 70%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+#middle {
+	width: 100%;
+	height: 10%;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+#bottom {
+	width: 100%;
+	height: 20%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+i {
+	color: #6BC0FF;
+	margin-left: 20px;
+}
+
+i:hover {
+	color: #666666;
+}
+
+div div p {
+	margin: 5px auto;
+	font-family: 'Muli', sans-serif;
+}
+
+#quoteText {
+	margin: 5px 10px;
+	padding-top: 20px;
+	font-size: 3.5vw;
+}
+
+#quoteAuthor {
+	padding-bottom: 5%;
+	padding-top: 5px;
+	font-size: 2.5vw;
+	font-style: italic;
+}
+
+button {
+	width: 100px;
+	margin: 5px 25px;
+	padding: 5px 10px;
+	border: none;
+	background-color: #6BC0FF;
+	color: #FFFFFF;
+	font-size: 15px;
+	text-align: center;
+	outline: none;
+	transition-duration: 800ms;
+	-webkit-transition-duration: 800ms;
+}
+
+button:hover {
+	outline: 1px solid #6BC0FF;
+	background-color: #FFFFFF;
+	color: #6BC0FF;
+	cursor: pointer;
+}
+
+footer {
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	height: 5vw;
+	background-color: #000000;
+	z-index: 2;
+}
+
+#pagebottom {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0px 10px;
+}
+
+#contact {
+	margin: 0px 10px;
+	padding: 0px 10px;
+	color: #C1C1C1;
+	font-family: 'Dosis', sans-serif;
+}
+
+#social {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	padding-right: 10vw;
+	height: 90%;
+}
+
+footer div a i {
+  color: #C1C1C1;
+	margin: 0px 10px;
+}
+
+footer div a i:hover {
+	color: #6BC0FF;
+}

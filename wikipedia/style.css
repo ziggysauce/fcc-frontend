@@ -1,0 +1,109 @@
+/* CSS File for the Wikipedia Viewer */
+@import url('https://fonts.googleapis.com/css?family=Poiret+One');
+
+#wikibox {
+  height: 70%;
+  width: 70%;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 3em;
+  position: absolute;
+}
+
+#wikititle {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-size: 3em;
+  font-family: 'Poiret One', sans-serif;
+}
+
+input {
+  display: block;
+  margin: 0px auto;
+  font-size: 16px;
+  color: #EAB159;
+}
+
+input[type=text] {
+  width: 40%;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-bottom: 1px solid #EAB159;
+}
+
+input[type=text]:focus {
+  width: 60%;
+  outline: none;
+}
+
+button {
+  display: block;
+	margin: 20px auto;
+	padding: 15px 20px;
+	border: none;
+	background-color: #EAB159;
+	color: #FFFFFF;
+	font-size: 15px;
+	text-align: center;
+	outline: none;
+	transition-duration: 800ms;
+	-webkit-transition-duration: 800ms;
+}
+
+button:hover {
+	outline: 1px solid #EAB159;
+	background-color: #FFFFFF;
+	color: #EAB159;
+	cursor: pointer;
+}
+
+footer {
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	height: 3em;
+	background-color: #000000;
+	z-index: 2;
+}
+
+#pagebottom {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0px 10px;
+}
+
+#contact {
+	margin: 0px 10px;
+	padding: 0px 10px;
+	color: #C1C1C1;
+	font-family: sans-serif;
+  font-size: 1em;
+}
+
+#social {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	padding-right: 10vw;
+	height: 90%;
+}
+
+footer div a i {
+  color: #C1C1C1;
+	margin: 0px 10px;
+}
+
+footer div a i:hover {
+	color: #EAB159;
+}

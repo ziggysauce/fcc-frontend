@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.css">
+    <title>Local Weather App</title>
+  </head>
+  <body>
+    <div id="weatherbox">
+      <div id="topbox">
+        <span id="city"></span>
+      </div>
+      <div id="middlebox">
+        <div id="midmid">
+          <span><i id="currenticon"></i></span>
+          <span id="temp"></span>
+          <button class="fc">F</button>
+        </div>
+        <span id="desc"></span>
+      </div>
+      <div id="bottombox">
+        <div class="bottomsides">
+          <span><i class="wi wi-raindrop"></i></span>
+          <span id="hum"></span>
+        </div>
+        <div class="bottomsides">
+          <span><i class="wi wi-strong-wind"></i></span>
+          <span id="wind"></span>
+        </div>
+      </div>
+    </div>
+    <footer id="pagebottom">
+      <div id="contact">
+        <p>by ziggysauce</p>
+      </div>
+      <div id="social">
+        <a href="https://www.linkedin.com/in/daniel-nguyen-1a041495/" target="_blank"><i class="fa fa-linkedin-square" style="font-size: 3vw;"></i></a>
+        <a href="https://github.com/ziggysauce" target="_blank"><i class="fa fa-github" style="font-size: 3vw;"></i></a>
+        <a href="https://codepen.io/ziggysauce/" target="_blank"><i class="fa fa-codepen" style="font-size: 3vw;"></i></a>
+      </div>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
