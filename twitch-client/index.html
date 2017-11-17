@@ -1,0 +1,47 @@
+<!-- HTML for twitch-client app -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Twitch Client</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="twitchbox">
+        <div class="twitch-head">
+          <a id="ticon" href="https://www.twitch.tv/" target="_blank" style="font-size: 1.5em;"><i class="fa fa-twitch"></i></a>
+          <h1>twitch streams</h1>
+        </div>
+        <div class="twitch-nav">
+          <button type="button" name="all" class="twitchtoggle" id="alltab">all</button>
+          <button type="button" name="on" class="twitchtoggle" id="ontab">online</button>
+          <button type="button" name="off" class="twitchtoggle" id="offtab">offline</button>
+        </div>
+        <div class="twitch-body">
+          <div class="online">
+            <div class="onbox"></div>
+          </div>
+          <div class="offline">
+            <div class="offbox"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer id="pagebottom">
+      <div id="contact">
+        <p>by ziggysauce</p>
+      </div>
+      <div id="social">
+        <a href="https://www.linkedin.com/in/daniel-nguyen-1a041495/" target="_blank"><i class="fa fa-linkedin-square" style="font-size: 1.5em;"></i></a>
+        <a href="https://github.com/ziggysauce" target="_blank"><i class="fa fa-github" style="font-size: 1.5em;"></i></a>
+        <a href="https://codepen.io/ziggysauce/" target="_blank"><i class="fa fa-codepen" style="font-size: 1.5em;"></i></a>
+      </div>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>

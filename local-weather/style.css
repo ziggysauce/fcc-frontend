@@ -1,14 +1,13 @@
 /* Stylesheet for Local Weather App */
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 
-body {
+html {
   background: linear-gradient(to bottom, #4C739B 0%, #B0D5A7 100%) fixed;
   background: -webkit-linear-gradient(to bottom, #4C739B 0%, #B0D5A7 100%) fixed;
   background: -moz-linear-gradient(to bottom, #4C739B 0%, #B0D5A7 100%) fixed;
 }
 
 #weatherbox {
-  /*box-shadow: 2px 2px 10px #FFFFFF;*/
   border: 1px solid #FFFFFF;
   color: #FFFFFF;
   display: flex;
@@ -86,8 +85,8 @@ button {
 .fc {
   border-radius: 50%;
   font-size: 35px;
-  height: 48px;
-  width: 45px;
+  height: 1.5em;
+  width: 1.5em;
   text-align: center;
   text-decoration: none;
   background: none;
@@ -100,7 +99,6 @@ button {
   color: #FFFFFF;
   border: 1px solid #FFFFFF;
 }
-
 
 footer {
 	position: fixed;

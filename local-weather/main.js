@@ -6,14 +6,14 @@ $( document ).ready(function() {
   var temp = []; var wind = [];
 
   // Request IP address from user to get location & store coordinates
-  $.getJSON("http://ip-api.com/json", function(data) {
+  $.getJSON("https://ipapi.co/json", function(data) {
     //$("#city").html(data.city);
-    lat = data.lat;
-    lon = data.lon;
+    lat = data.latitude;
+    lon = data.longitude;
 
     // Get weather information
     // Need to add 'https://cors-anywhere.herokuapp.com/' before URL to have HTTPS using a CORS server
-    $.getJSON("http://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon +"&APPID=44762e241a2c3fc4f616e416abc08f0e", function(weatherData) {
+    $.getJSON("https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon +"&APPID=44762e241a2c3fc4f616e416abc08f0e", function(weatherData) {
 
     $("#city").html(weatherData.name);
     // Store temperatures (celsius and fahrenheit)

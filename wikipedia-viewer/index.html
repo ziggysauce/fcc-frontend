@@ -8,10 +8,17 @@
     <title>Wikipedia Viewer</title>
   </head>
   <body>
-    <div id="wikibox">
-      <p id="wikititle">Wikipedia Viewer</p>
-      <input type="text" name="search" placeholder="Search...">
-      <button type="button" name="button"">Random Article</button>
+    <div class="wrapper">
+      <div id="wikibox">
+        <p id="wikititle">Wikipedia Viewer</p>
+        <form id="form" role="search">
+          <input id="searchInput" type="search" name="search" placeholder="Search..." aria-label="search for results">
+          <button type="button" id="hitSearch"><i class="fa fa-search"></i></button>
+          <button type="button" id="refresh"><i class="fa fa-refresh"></i></button>
+        </form>
+        <a id="randart" href="https://en.wikipedia.org/wiki/Special:Random" target="_blank">Random Article</a>
+      </div>
+      <div class="content"></div>
     </div>
     <footer id="pagebottom">
       <div id="contact">
@@ -23,6 +30,7 @@
         <a href="https://codepen.io/ziggysauce/" target="_blank"><i class="fa fa-codepen" style="font-size: 1.5em;"></i></a>
       </div>
     </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="main.js"></script>
   </body>
 </html>
