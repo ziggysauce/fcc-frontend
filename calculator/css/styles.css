@@ -1,10 +1,140 @@
 /*stylesheet for calculator app*/
 
 body, html {
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
 }
 
-p {
-  color: blue;
+body {
+  background: -webkit-linear-gradient(right top, #494949, #6f6f6f);
+  background: -moz-linear-gradient(right top, #494949, #6f6f6f);
+}
+
+/*#container {
+  height: 100%;
+}*/
+
+.calc-container {
+  /*outline: 1px solid red;*/
+  box-shadow: 7px 7px 10px rgba(0,0,0,0.2);
+  margin: 3% auto;
+  height: 475px;
+  width: 300px;
+}
+
+.calc-row {
+  height: 20%;
+}
+
+.calc-row-1 {
+  height: 18%;
+  border: 1px solid #BDBDBD;
+  border-bottom: none;
+  background: #BDBDBD;
+  color: #212121;
+}
+
+.calc-row-2 {
+  height: 7%;
+  border: 1px solid #BDBDBD;
+  border-bottom: none;
+  background: #BDBDBD;
+  color: #212121;
+}
+
+button {
+  cursor: pointer;
+  margin-right: -4px;
+  /*border-top: 1px solid black;
+  border-left: none;
+  border-right: none;
+  border-bottom: none;*/
+  border: 1px solid transparent;
+  outline: none;
+  font-size: 1.5em;
+  font-family: 'Source Sans Pro', Arial;
+  color: #FFF;
+  background: transparent;
+}
+
+button:hover {
+  background: rgba(0,0,0,0.3);
+}
+
+.calc-row button:last-child:hover {
+  background: #ffb0cb;
+}
+
+.calc-buttons {
+  background: -webkit-linear-gradient(right top, #795548, #543a30);
+  background: -moz-linear-gradient(right top, #795548, #543a30);
+  height: 75%;
+}
+
+/*.calc-row button:nth-of-type(4), .calc-row button:nth-of-type(3), .calc-row button:nth-of-type(2) {
+  border-left: 1px solid black;
+}*/
+
+/*top row buttons*/
+.calc-row:first-of-type {
+  background: rgba(255,255,255,.2);
+}
+
+/*right column buttons*/
+.calc-row button:last-child {
+  background: #cd4b79;
+}
+
+.small-square {
+  width: 25%;
+  height: 100%;
+}
+
+.small-square-2 {
+  width: 50%;
+  height: 100%;
+}
+
+/* CSS for footer */
+#socmedia {
+  height: 100%;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.contactmedia {
+  display: flex;
+  flex-direction: row;
+}
+
+footer {
+	height: 5em;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 25px 0px;
+	background-color: #141414;
+}
+
+footer a {
+  font-size: 1.5em;
+}
+
+footer i {
+  width: 1em;
+  padding: 0px 10px;
+  text-align: center;
+  color: #555;
+}
+
+footer i:hover {
+  color: #F2F2F2;
+}
+
+#footbottom {
+  color: #555;
 }
