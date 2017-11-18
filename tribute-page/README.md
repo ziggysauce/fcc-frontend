@@ -15,7 +15,7 @@ Build an app that is functionally similar to this: https://codepen.io/FreeCodeCa
 
 ## Launch
 
-[Tribute Page](https://ziggysauce.github.io/chingu-fcc-speedrun-challenge/frontend/tribute-page/)
+[Tribute Page](https://ziggysauce.github.io/fcc-frontend/tribute-page/)
 
 ## Notes
 [Medium Article](https://medium.com/chingu-fcc-speedrun/fcc-speedrun-tribute-page-c9a399b0206)

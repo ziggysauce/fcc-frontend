@@ -22,7 +22,7 @@ Build an app that is functionally similar to this: https://codepen.io/FreeCodeCa
 * Open index.html
 
 ## Launch
-[Twitch Client](https://ziggysauce.github.io/chingu-fcc-speedrun-challenge/frontend/twitch-client/index.html)
+[Twitch Client](https://ziggysauce.github.io/fcc-frontend/twitch-client/)
 
 ## Notes
 [Medium Article](https://medium.com/chingu-fcc-speedrun/fcc-speedrun-twitch-client-3810470daf9d)

@@ -16,7 +16,7 @@ Build an app that is functionally similar to this: https://codepen.io/FreeCodeCa
 
 ## Launch
 
-[Random Quote Machine](https://ziggysauce.github.io/chingu-fcc-speedrun-challenge/frontend/random-quote-machine/)
+[Random Quote Machine](https://ziggysauce.github.io/fcc-frontend/random-quote-machine/)
 
 ## Notes
 [Medium Article](https://medium.com/chingu-fcc-speedrun/fcc-speedrun-random-quote-machine-db39a0092175)

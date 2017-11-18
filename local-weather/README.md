@@ -14,7 +14,7 @@ Build an app that is functionally similar to this: http://codepen.io/FreeCodeCam
 * Open index.html
 
 ## Launch
-[Local Weather App](https://ziggysauce.github.io/chingu-fcc-speedrun-challenge/frontend/local-weather/)
+[Local Weather App](https://ziggysauce.github.io/fcc-frontend/local-weather/)
 
 ## Notes
 [Medium Article](https://medium.com/chingu-fcc-speedrun/fcc-speedrun-local-weather-app-43053a11472a)
