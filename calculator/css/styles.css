@@ -3,22 +3,21 @@
 body, html {
   margin: 0;
   padding: 0;
+  height: calc(100% - 5em);
 }
 
 body {
-  background: -webkit-linear-gradient(right top, #303030, #6f6f6f);
-  background: -moz-linear-gradient(right top, #303030, #6f6f6f);
+  background: -webkit-linear-gradient(right top, #7a7a7a, #b6b6b6);
+  background: -moz-linear-gradient(right top, #7a7a7a, #b6b6b6);
 }
 
 #container {
-  /*height: 100%;*/
 }
 
 .calc-container {
-  /*outline: 1px solid red;*/
   box-shadow: 0px 5px 10px rgba(0,0,0,0.3);
-  border-radius: 3px;
-  margin: 3% auto;
+  border-radius: 5px;
+  margin: 5% auto;
   height: 475px;
   width: 300px;
 }
@@ -27,16 +26,21 @@ body {
   height: 20%;
 }
 
+.top-container {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  background: -webkit-linear-gradient(right top, #326a63 35%, #abe8e0);
+  background: -moz-linear-gradient(right top, #326a63 35%, #abe8e0);
+}
+
 .calc-row-1, .calc-row-2 {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
   align-items: center;
-  /*border: 1px solid #ebe8d4;*/
-  border-bottom: none;
-  padding: 0px 5px;
-  background: #ebe8d4;
-  color: #212121;
+  padding: 0px 20px;
+  /*margin: 0px -1px;*/
+  color: #fff;
   font-family: 'Source Sans Pro', Arial;
   overflow-x: scroll;
   overflow-y: auto;
@@ -44,12 +48,17 @@ body {
 
 .calc-row-1 {
   height: 7%;
-  color: #cd4b79;
+  /*border-top-left-radius: 5px;
+  border-top-right-radius: 5px;*/
+
 }
 
 .calc-row-2 {
   height: 18%;
   font-size: 5em;
+
+  /*border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;*/
 }
 
 button {
@@ -59,21 +68,14 @@ button {
   outline: none;
   font-size: 1.5em;
   font-family: 'Source Sans Pro', Arial;
-  color: #ebe8d4;
+  color: #000;
   background: transparent;
 }
 
-button:hover {
-  background: rgba(0,0,0,0.3);
-}
-
-.calc-row button:last-child:hover {
-  /*background: #ffb0cb;*/
-}
-
 .calc-buttons {
-  background: -webkit-linear-gradient(#795548, #49322a);
-  background: -moz-linear-gradient(#795548, #49322a);
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  background: #FFF;
   height: 75%;
 }
 
@@ -83,14 +85,14 @@ button:hover {
 
 /*top row buttons*/
 .calc-row:first-of-type button {
-  /*background: rgba(255,255,255,.2);*/
-  color: #FFF;
+  color: #000;
+  background: #e9e9e9;
 }
 
 /*right column buttons*/
 .calc-row button:last-child {
-  /*background: #cd4b79;*/
-  color: #cd4b79;
+  color: #000;
+  background: #e9e9e9;
 }
 
 .small-square {
@@ -98,12 +100,46 @@ button:hover {
   height: 100%;
 }
 
-.small-square-2 {
+.calc-row button:hover {
+  background: #ff7566;
+}
+
+#zero-button {
   width: 50%;
   height: 100%;
 }
 
+#equal-button {
+  border: 1px solid #e9e9e9;
+  background: -webkit-linear-gradient(right top, #326a63 25%, #abe8e0);
+  background: -moz-linear-gradient(right top, #326a63 25%, #abe8e0);
+  color: #fff;
+}
+
+#equal-button:hover {
+  background: -webkit-linear-gradient(right top, #ff7566 25%, #ffd0be);
+  background: -moz-linear-gradient(right top, #ff7566 25%, #ffd0be);
+}
+
+#clear-button {
+  color: #ff7566;
+}
+
+#clear-button:hover {
+  color: #fff;
+}
+
 /* CSS for footer */
+footer {
+	height: 5em;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  padding: 25px 0px;
+	background-color: #141414;
+}
+
 #socmedia {
   height: 100%;
   align-items: center;
@@ -116,16 +152,6 @@ button:hover {
 .contactmedia {
   display: flex;
   flex-direction: row;
-}
-
-footer {
-	height: 5em;
-  width: 100%;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  padding: 25px 0px;
-	background-color: #141414;
 }
 
 footer a {
