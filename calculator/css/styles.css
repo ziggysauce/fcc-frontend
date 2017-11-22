@@ -3,7 +3,7 @@
 body, html {
   margin: 0;
   padding: 0;
-  height: calc(100% - 5em);
+  height: 100%;
 }
 
 body {
@@ -11,13 +11,13 @@ body {
   background: -moz-linear-gradient(right top, #7a7a7a, #b6b6b6);
 }
 
-#container {
+.container {
+  padding-bottom: 75px
 }
 
 .calc-container {
   box-shadow: 0px 5px 10px rgba(0,0,0,0.3);
-  /*border-radius: 5px;*/
-  margin: 5% auto;
+  margin: 75px auto;
   height: 475px;
   width: 300px;
 }
@@ -36,11 +36,10 @@ body {
   justify-content: flex-end;
   align-items: center;
   padding: 0px 20px;
-  /*margin: 0px -1px;*/
   color: #fff;
   font-family: 'Source Sans Pro', Arial;
   overflow-x: scroll;
-  overflow-y: auto;
+  overflow-y: hidden;
 }
 
 .calc-row-1 {
@@ -75,22 +74,14 @@ button {
   height: 20%;
 }
 
-/*.calc-row button:nth-of-type(4), .calc-row button:nth-of-type(3), .calc-row button:nth-of-type(2) {
-  border-left: 1px solid black;
-}*/
-
-/*top row buttons*/
-.calc-row:first-of-type button {
+/* top row buttons */
+/* right column buttons */
+.calc-row:first-of-type button, .calc-row button:last-child {
   color: #000;
   background: #e9e9e9;
 }
 
-/*right column buttons*/
-.calc-row button:last-child {
-  color: #000;
-  background: #e9e9e9;
-}
-
+/* class for every clickable button */
 .small-square {
   width: 25%;
   height: 100%;
@@ -98,6 +89,7 @@ button {
 
 .calc-row button:hover {
   background: #ff7566;
+  color: #fff;
 }
 
 #zero-button {
@@ -128,7 +120,7 @@ button {
 
 /* CSS for footer */
 footer {
-	height: 5em;
+	height: 75px;
   width: 100%;
   position: fixed;
   bottom: 0;
