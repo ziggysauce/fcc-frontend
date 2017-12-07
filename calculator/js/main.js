@@ -18,7 +18,11 @@ function updateTotal() {
     } else if (currentOp === '*') {
       currentTotal = parseFloat(currentNums[0]) * parseFloat(currentNums[1]);
     } else if (currentOp === '/') {
-      currentTotal = parseFloat(currentNums[0]) / parseFloat(currentNums[1]);
+      if (currentNums[1] === '0') {
+        currentTotal = 'Does Not Exist';
+      } else {
+        currentTotal = parseFloat(currentNums[0]) / parseFloat(currentNums[1]);
+      }
     }
     currentNums[0] = currentTotal;
     currentNums.pop();
