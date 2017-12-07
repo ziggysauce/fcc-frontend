@@ -1,7 +1,7 @@
 // Javascript file for calculator app
 
 // Store variables
-const numButtons = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'deciaml'];
+const numButtons = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'decimal'];
 const opsButtons = ['add', 'subtract', 'multiply', 'divide'];
 let cleared = false;
 let currentNums = [];
