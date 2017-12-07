@@ -1,7 +1,7 @@
 // Javascript file for calculator app
 
 // Store variables
-const numButtons = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
+const numButtons = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'deciaml'];
 const opsButtons = ['add', 'subtract', 'multiply', 'divide'];
 let cleared = false;
 let currentNums = [];
@@ -26,12 +26,21 @@ function updateTotal() {
   }
 }
 
+function checkClear() {
+  // Save value from previous expression in top window
+  if (!cleared) {
+    // Expression shown in top window
+    $('#smallInput')[0].innerHTML += $('#bigInput')[0].innerHTML;
+  }
+}
+
 // User clicks on a number
 // Number is shown in bottom window
 function clickNum(e) {
   // Replace input if it's zero
   if ($('#bigInput')[0].innerHTML === '0' || cleared) {
     $('#bigInput')[0].innerHTML = e.target.innerHTML;
+    $('#smallInput')[0].innerHTML = '';
     cleared = false;
   } else {
     // Get a number longer than 1 digit
@@ -45,12 +54,8 @@ function clickOps(e) {
   // Store previous number entered
   currentNums.push($('#bigInput')[0].innerHTML);
   updateTotal();
-
-  // Save value from previous expression in top window
-  if (!cleared) {
-    // Expression shown in top window
-    $('#smallInput')[0].innerHTML += $('#bigInput')[0].innerHTML;
-  }
+  checkClear();
+  cleared = false;
 
   // Add operation to top window
   if (e.target.innerHTML === 'x') {
