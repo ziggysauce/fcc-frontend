@@ -38,10 +38,9 @@ body, html {
   flex-direction: row;
   justify-content: flex-end;
   align-items: center;
-  padding: 0px 20px;
+  /*padding: 0px 20px;*/
   color: #fff;
   font-family: 'Source Sans Pro', Arial;
-  overflow-x: scroll;
   overflow-y: hidden;
 }
 
@@ -51,7 +50,17 @@ body, html {
 
 .calc-row-2 {
   height: 70%;
+}
+
+.calc-row-2 p {
+  white-space: nowrap;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  text-align: right;
   font-size: 3em;
+  padding: 10px 20px 0px 20px;
+  height: 100%;
+  width: 260px;
 }
 
 button {

@@ -1,8 +1,9 @@
-// javascript file for calculator app
+// Javascript file for calculator app
 
-// store variables
+// Store variables
 const numButtons = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
 const opsButtons = ['add', 'subtract', 'multiply', 'divide'];
+let cleared = false;
 let currentNums = [];
 let currentOp = '';
 let currentTotal = '';
@@ -11,13 +12,13 @@ let currentTotal = '';
 function updateTotal() {
   if (currentNums.length === 2) {
     if (currentOp === '+') {
-      currentTotal = Number(currentNums[0]) + Number(currentNums[1]);
+      currentTotal = parseFloat(currentNums[0]) + parseFloat(currentNums[1]);
     } else if (currentOp === '-') {
-      currentTotal = Number(currentNums[0]) - Number(currentNums[1]);
+      currentTotal = parseFloat(currentNums[0]) - parseFloat(currentNums[1]);
     } else if (currentOp === '*') {
-      currentTotal = Number(currentNums[0]) * Number(currentNums[1]);
+      currentTotal = parseFloat(currentNums[0]) * parseFloat(currentNums[1]);
     } else if (currentOp === '/') {
-      currentTotal = Number(currentNums[0]) / Number(currentNums[1]);
+      currentTotal = parseFloat(currentNums[0]) / parseFloat(currentNums[1]);
     }
     currentNums[0] = currentTotal;
     currentNums.pop();
@@ -26,18 +27,17 @@ function updateTotal() {
 }
 
 // User clicks on a number
-// Number is shown in top and bottom window
+// Number is shown in bottom window
 function clickNum(e) {
   // Replace input if it's zero
-  if ($('#bigInput')[0].innerHTML === '0') {
+  if ($('#bigInput')[0].innerHTML === '0' || cleared) {
     $('#bigInput')[0].innerHTML = e.target.innerHTML;
+    cleared = false;
   } else {
     // Get a number longer than 1 digit
     $('#bigInput')[0].innerHTML += e.target.innerHTML;
   }
-  $('#smallInput')[0].innerHTML += e.target.innerHTML;
 }
-
 
 // User clicks on an operation
 // Operation is shown in top window
@@ -46,6 +46,13 @@ function clickOps(e) {
   currentNums.push($('#bigInput')[0].innerHTML);
   updateTotal();
 
+  // Save value from previous expression in top window
+  if (!cleared) {
+    // Expression shown in top window
+    $('#smallInput')[0].innerHTML += $('#bigInput')[0].innerHTML;
+  }
+
+  // Add operation to top window
   if (e.target.innerHTML === 'x') {
     $('#bigInput')[0].innerHTML = '';
     $('#smallInput')[0].innerHTML += ' * ';
@@ -57,6 +64,17 @@ function clickOps(e) {
   }
 }
 
+// User clicks on the pos-neg button
+// Current value is converted from positive to negative or vice versa
+function clickPosNeg() {
+  $('#bigInput')[0].innerHTML = (parseFloat($('#bigInput')[0].innerHTML) * -1);
+}
+
+// User clicks on the 'percent' button
+// Current value is converted to 1/100th of the current value
+function clickPercent() {
+  $('#bigInput')[0].innerHTML = (parseFloat($('#bigInput')[0].innerHTML)/100);
+}
 
 // User clicks 'equal' button
 // Expression is calculated
@@ -69,6 +87,7 @@ function clickEqual(e) {
   $('#smallInput')[0].innerHTML = currentTotal;
   // Clear stored numbers
   currentNums = [];
+  cleared = true;
 }
 
 // User clicks 'clear' button
@@ -81,32 +100,24 @@ function clickClear(e) {
   currentTotal = '';
 }
 
-
 // Click events for all buttons
 function setupClicks() {
   // Click event for numbers
   for (let i = 0; i < numButtons.length; i += 1) {
-    $(`#${numButtons[i]}-button`).on('click', (e) => {
-      clickNum(e);
-    })
+    $(`#${numButtons[i]}-button`).on('click', (e) => { clickNum(e); })
   }
-
   // Click event for operator
   for (let i = 0; i < opsButtons.length; i += 1) {
-    $(`#${opsButtons[i]}-button`).on('click', (e) => {
-      clickOps(e);
-    })
+    $(`#${opsButtons[i]}-button`).on('click', (e) => { clickOps(e); })
   }
-
+  // Click event for 'pos-neg'
+  $('#pos-neg-button').on('click', (e) => { clickPosNeg(e); })
+  // Click event for 'percent'
+  $('#percent-button').on('click', (e) => { clickPercent(e); })
   // Click event for 'equal'
-  $('#equal-button').on('click', (e) => {
-    clickEqual(e);
-  })
-
+  $('#equal-button').on('click', (e) => { clickEqual(e); })
   // Click event for 'clear'
-  $('#clear-button').on('click', (e) => {
-    clickClear(e);
-  })
+  $('#clear-button').on('click', (e) => { clickClear(e); })
 }
 
 $(document).ready(() => {
