@@ -13,8 +13,39 @@
   <body>
 
     <div class="container">
+      <div class="show-timer">
+        <span>00</span> : <span>00</span>
+      </div>
       <div class="mug-container">
-
+        <div class="coffee-fill">
+          <div class="coffee">
+          </div>
+        </div>
+      </div>
+      <div class="button-container">
+        <button type="button" class="pomodoro-toggle-buttons">Start</button>
+        <button type="button" class="pomodoro-toggle-buttons">Pause</button>
+        <button type="button" class="pomodoro-toggle-buttons">Reset</button>
+      </div>
+      <div class="input-container">
+        <!-- <input type="text" class="input-adjust" value="25">
+        <input type="text" class="input-adjust" value="5"> -->
+        <form class="input-form">
+          <label for="work-period">Work</label>
+          <div class="change-input">
+            <button type="button" class="input-toggle-button">-</button>
+            <input type="text" name="work-period" id="work-period" min="1" max="120" value="25">
+            <button type="button" class="input-toggle-button">+</button>
+          </div>
+        </form>
+        <form class="input-form">
+          <label for="break-period">Break</label>
+          <div class="change-input">
+            <button type="button" class="input-toggle-button">-</button>
+            <input type="text" name="break-period" id="break-period" min="1" max="30" value="5">
+            <button type="button" class="input-toggle-button">+</button>
+          </div>
+        </form>
       </div>
     </div>
 
