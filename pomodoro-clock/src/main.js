@@ -2,6 +2,8 @@
 
 // Store ids for +/- buttons
 const plusMinus = ['work-minus-button', 'work-add-button', 'break-minus-button', 'break-add-button'];
+let seconds = 12;
+let currentTimer = '';
 
 // Set timer based on work period input
 function changeWork() {
@@ -62,7 +64,56 @@ function changeInput() {
   }
 }
 
+function countdownTimer() {
+  let minutes = Number($('#minutes')[0].innerHTML);
+  seconds -= 1
+
+  if (minutes < 10) {
+    $('#minutes')[0].innerHTML = `0${minutes}`;
+  } if (seconds >= 10) {
+    console.log(seconds);
+    $('#seconds')[0].innerHTML = seconds;
+  } if (seconds < 10 && seconds >= 0) {
+    $('#seconds')[0].innerHTML = `0${seconds}`;
+    console.log(seconds);
+  } if (seconds < 0) {
+    console.log(seconds);
+    seconds = 60;
+    minutes -= 1;
+    if (minutes < 0) {
+      clearInterval(currentTimer);
+      alert('done');
+      $('#minutes')[0].innerHTML = '00';
+    } else {
+      if (minutes < 10) {
+        $('#minutes')[0].innerHTML = `0${minutes}`;
+      } else {
+        $('#minutes')[0].innerHTML = minutes;
+      }
+    }
+  }
+}
+
+function startCountDown() {
+  $('#start').on('click', () => {
+    currentTimer = setInterval(countdownTimer, 1000);
+  })
+}
+
+function pauseCountDown() {
+
+}
+
+function resetCountDown() {
+
+}
+
+function beginEndButtons() {
+  startCountDown();
+}
+
 $(document).ready(() => {
   updateSession();
   changeInput();
+  beginEndButtons();
 });
