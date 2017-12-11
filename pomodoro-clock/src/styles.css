@@ -9,6 +9,11 @@ body, html {
   background: linear-gradient(right, #ff8619, #ffcc69);
 }
 
+/* Make button inactive */
+/*.active {
+  pointer-events: none;
+}*/
+
 .container {
   font-family: 'Source Sans Pro', sans-serif;
   display: flex;

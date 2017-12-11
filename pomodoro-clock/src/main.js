@@ -2,7 +2,7 @@
 
 // Store ids for +/- buttons
 const plusMinus = ['work-minus-button', 'work-add-button', 'break-minus-button', 'break-add-button'];
-let seconds = 12;
+let seconds = 60;
 let currentTimer = '';
 
 // Set timer based on work period input
@@ -94,22 +94,25 @@ function countdownTimer() {
   }
 }
 
-function startCountDown() {
-  $('#start').on('click', () => {
-    currentTimer = setInterval(countdownTimer, 1000);
-  })
-}
-
-function pauseCountDown() {
-
-}
-
-function resetCountDown() {
-
-}
-
 function beginEndButtons() {
-  startCountDown();
+  // Event handler for pressing 'start'
+  (function startCountDown() {
+    $('#start').on('click', () => {
+      currentTimer = setInterval(countdownTimer, 1000);
+      $('.active').attr('disabled', true);
+    })
+  })();
+  // Event handler for pressing 'pause'
+  (function pauseCountDown() {
+    $('#pause').on('click', () => {
+      $('.active').attr('disabled', false);
+      clearInterval(currentTimer);
+    })
+  })();
+  // Event handler for pressing 'reset'
+  (function resetCountDown() {
+    $('.active').attr('disabled', false);
+  })();
 }
 
 $(document).ready(() => {
