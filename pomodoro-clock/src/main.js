@@ -2,8 +2,9 @@
 
 // Store ids for +/- buttons
 const plusMinus = ['work-minus-button', 'work-add-button', 'break-minus-button', 'break-add-button'];
-let seconds = 60;
+let seconds = 4;
 let currentTimer = '';
+let timerState = false;
 
 // Set timer based on work period input
 function changeWork() {
@@ -27,14 +28,16 @@ function updateSession() {
         changeWork();
         return false;
       }
+      return e;
     });
   $('#break-period').on('change', () => { changeBreak(); })
-  .on('keypress', (e) => {
-    if (e.keyCode === 13) {
-      changeBreak();
-      return false;
-    }
-  });
+    .on('keypress', (e) => {
+      if (e.keyCode === 13) {
+        changeBreak();
+        return false;
+      }
+      return e;
+    });
 }
 
 // Update work and break period sessions when +/- buttons are pressed
@@ -60,36 +63,41 @@ function changeInput() {
         $('#break-period').val(currentBreak);
         changeBreak();
       }
-    })
+    });
   }
 }
 
 function countdownTimer() {
   let minutes = Number($('#minutes')[0].innerHTML);
-  seconds -= 1
+  seconds -= 1;
 
-  if (minutes < 10) {
-    $('#minutes')[0].innerHTML = `0${minutes}`;
-  } if (seconds >= 10) {
+  if (seconds >= 10) {
     console.log(seconds);
     $('#seconds')[0].innerHTML = seconds;
   } if (seconds < 10 && seconds >= 0) {
     $('#seconds')[0].innerHTML = `0${seconds}`;
     console.log(seconds);
   } if (seconds < 0) {
+    $('#seconds')[0].innerHTML = '59';
     console.log(seconds);
-    seconds = 60;
+    seconds = 59;
     minutes -= 1;
     if (minutes < 0) {
       clearInterval(currentTimer);
       alert('done');
       $('#minutes')[0].innerHTML = '00';
-    } else {
-      if (minutes < 10) {
-        $('#minutes')[0].innerHTML = `0${minutes}`;
-      } else {
-        $('#minutes')[0].innerHTML = minutes;
+      if (timerState) {
+        timerState = false;
+        $('#minutes')[0].innerHTML = $('#break-period').val();
+        $('#seconds')[0].innerHTML = '00';
+      } else if (!timerState) {
+        timerState = true;
+        $('#minutes')[0].innerHTML = $('#work-period').val();
       }
+    } else if (minutes < 10) {
+      $('#minutes')[0].innerHTML = `0${minutes}`;
+    } else {
+      $('#minutes')[0].innerHTML = minutes;
     }
   }
 }
@@ -100,6 +108,10 @@ function beginEndButtons() {
     $('#start').on('click', () => {
       currentTimer = setInterval(countdownTimer, 1000);
       $('.active').attr('disabled', true);
+      // Work period is active
+      timerState = true;
+      $('#minutes')[0].innerHTML = $('#work-period').val() - 1;
+      $('#seconds')[0].innerHTML = '59';
     })
   })();
   // Event handler for pressing 'pause'
@@ -111,7 +123,15 @@ function beginEndButtons() {
   })();
   // Event handler for pressing 'reset'
   (function resetCountDown() {
-    $('.active').attr('disabled', false);
+    $('#reset').on('click', () => {
+      console.log('clicked');
+      $('.active').attr('disabled', false);
+      clearInterval(currentTimer);
+      seconds = 60;
+      currentTimer = '';
+      $('#minutes')[0].innerHTML = $('#work-period').val();
+      $('#seconds')[0].innerHTML = '00';
+    })
   })();
 }
 
