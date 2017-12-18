@@ -176,11 +176,11 @@ function changeInput() {
       } else if (e.target.id === 'break-minus-button' && currentBreak > 1) {
         currentBreak -= 1;
         $('#break-period').val(currentBreak);
-        changeBreak();
+        // changeBreak();
       } else if (e.target.id === 'break-add-button') {
         currentBreak += 1;
         $('#break-period').val(currentBreak);
-        changeBreak();
+        // changeBreak();
       }
     });
   }
