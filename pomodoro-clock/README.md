@@ -12,4 +12,10 @@ Build an app that is functionally similar to this: https://codepen.io/FreeCodeCa
 
 * User Story: I can customize the length of each pomodoro.
 
-## Notes
+## Deployment
+
+* Open index.html
+
+## Launch
+
+[Pomodoro](https://ziggysauce.github.io/fcc-frontend/pomodoro-clock/)

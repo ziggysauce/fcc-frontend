@@ -18,6 +18,3 @@ Build an app that is functionally similar to this: https://codepen.io/FreeCodeCa
 ## Launch
 
 [Calculator](https://ziggysauce.github.io/fcc-frontend/calculator/)
-
-
-## Notes
