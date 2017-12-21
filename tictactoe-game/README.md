@@ -12,4 +12,10 @@ Build an app that is functionally similar to this: https://codepen.io/FreeCodeCa
 
 * User Story: I can choose whether I want to play as X or O.
 
-## Notes
+## Deployment
+
+* Open index.html
+
+## Launch
+
+[Tic Tac Toe](https://ziggysauce.github.io/fcc-frontend/tictactoe-game/)
