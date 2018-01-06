@@ -4,7 +4,8 @@ html, body {
 }
 
 .game-container {
-  border: 1px solid red;
+  margin-top: 20%;
+  /* border: 1px solid red; */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -13,15 +14,39 @@ html, body {
   /* height: calc(100% - 125px); */
 }
 
+/* CSS for board borders */
 .game-row {
-  border: 1px solid blue;
+  display: flex;
 }
+
+.game-row:first-child button {
+  border-top: none;
+}
+
+.game-row:last-child button {
+  border-bottom: none;
+}
+
+.game-row button:first-child {
+  border-left: none;
+}
+
+.game-row button:last-child {
+  border-right: none;
+}
+/* CSS for board borders */
+
 
 .game-container button {
   width: 4em;
   height: 4em;
   outline: none;
   border: 1px solid green;
+
+}
+
+.game-container button:hover {
+  background: red;
 }
 
 /* CSS for footer */
