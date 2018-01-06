@@ -1,17 +1,17 @@
 html, body {
   padding: 0;
   margin: 0;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 .game-container {
-  margin-top: 20%;
   /* border: 1px solid red; */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
-  /* height: calc(100% - 125px); */
+  height: calc(100vh - 125px);
+  background: #f6f6f6;
 }
 
 /* CSS for board borders */
@@ -38,15 +38,31 @@ html, body {
 
 
 .game-container button {
-  width: 4em;
-  height: 4em;
+  width: 2em;
+  height: 2em;
   outline: none;
-  border: 1px solid green;
+  border: 1px solid #9bb297;
+  background: #f6f6f6;
+  cursor: pointer;
+
+  font-size: 4em;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 200;
+  color: transparent;
 
 }
 
 .game-container button:hover {
-  background: red;
+  color: #738cb0;
+}
+
+/* Clicked buttons are active and show X or O */
+.active-button-x {
+  color: #C5796D !important;
+}
+
+.active-button-o {
+  color: #738cb0 !important;
 }
 
 /* CSS for footer */
@@ -66,7 +82,6 @@ footer {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  font-family: 'Source Sans Pro', sans-serif;
 }
 
 .contactmedia {
