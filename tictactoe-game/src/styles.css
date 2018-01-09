@@ -53,15 +53,15 @@ html, body {
 }
 
 .game-container button:hover {
-  color: #738cb0;
+  color: #d5d5d5;
 }
 
 /* Clicked buttons are active and show X or O */
-.active-button-x {
+.active-button-first {
   color: #C5796D !important;
 }
 
-.active-button-o {
+.active-button-second {
   color: #738cb0 !important;
 }
 
