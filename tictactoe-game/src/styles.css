@@ -65,6 +65,45 @@ html, body {
   color: #738cb0 !important;
 }
 
+.end-game-container {
+  width: 50%;
+  height: 40%;
+  left: 25%;
+  top: 22%;
+  position: fixed;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background: rgba(0,0,0,0.7);
+}
+
+.end-game-title {
+  font-size: 4em;
+  color: #9bb297;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+#end-game-button {
+  border: 2px solid #9bb297;
+  outline: none;
+  background: transparent;
+  color: #9bb297;
+  cursor: pointer;
+  padding: 10px;
+  font-size: 2em;
+  font-family: 'Source Sans Pro', sans-serif;
+  transition: .3s;
+}
+
+#end-game-button:hover {
+  background: #9bb297;
+  color: rgba(0,0,0,0.7);
+  transition: .3s;
+}
+
 /* CSS for footer */
 footer {
 	height: 75px;

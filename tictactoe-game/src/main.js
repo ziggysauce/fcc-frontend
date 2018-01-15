@@ -17,6 +17,13 @@ const winningArr = [
   [2,4,6]
 ];
 
+function restartGame() {
+  $('#end-game-button').on('click', (e) => {
+    console.log(e.target);
+    location.reload();
+  });
+}
+
 // Compare arr to winningArr
 // If any winning lines sum to 3 then X wins
 // If any winning lines sum to -3 then O wins
@@ -29,8 +36,9 @@ function checkGame() {
       console.log('Player O wins');
     } else if (spaces === 9) {
       console.log('tie');
+      $('#end-game').fadeIn(500);
     }
-  })
+  });
 }
 
 // Show grey X or O on hover depeneding on who's turn it is
@@ -43,7 +51,7 @@ function hoverSquare() {
       } else if (!firstPlayer && !$(e.target).hasClass('pressed')) {
         e.target.innerHTML = 'O';
       }
-    })
+    });
   }
 }
 
@@ -72,13 +80,15 @@ function clickSquare() {
         spaces++;
       }
       checkGame();
-    })
+    });
   }
 }
 
 
 
 $(document).ready(() => {
+  restartGame();
+  $('#end-game').hide();
   hoverSquare();
   clickSquare();
 });
