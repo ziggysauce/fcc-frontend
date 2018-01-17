@@ -19,7 +19,6 @@ const winningArr = [
 
 function restartGame() {
   $('#end-game-button').on('click', (e) => {
-    console.log(e.target);
     location.reload();
   });
 }
@@ -31,11 +30,13 @@ function restartGame() {
 function checkGame() {
   winningArr.map((i) => {
     if (arr[i[0]] + arr[i[1]] + arr[i[2]] === 3) {
-      console.log('Player X wins');
+      $('.end-game-title')[0].innerHTML = 'Player X wins!'
+      $('#end-game').fadeIn(500);
     } else if (arr[i[0]] + arr[i[1]] + arr[i[2]] === -3) {
-      console.log('Player O wins');
+      $('.end-game-title')[0].innerHTML = 'Player O wins!'
+      $('#end-game').fadeIn(500);
     } else if (spaces === 9) {
-      console.log('tie');
+      $('.end-game-title')[0].innerHTML = 'It\'s a tie!'
       $('#end-game').fadeIn(500);
     }
   });
