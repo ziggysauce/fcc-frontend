@@ -1,4 +1,6 @@
 // Store variables
+let human = '';
+let comp = '';
 let firstPlayer = true;
 let spaces = 0;
 let arr = [
@@ -24,20 +26,20 @@ function restartGame() {
 }
 
 // Compare arr to winningArr
-// If any winning lines sum to 3 then X wins
-// If any winning lines sum to -3 then O wins
+// If any winning lines sum to 3 then player 1 wins
+// If any winning lines sum to -3 then player 2 (computer) wins
 // If winning line doesn't equal 3 or -3 then it's a tie
 function checkGame() {
   winningArr.map((i) => {
     if (arr[i[0]] + arr[i[1]] + arr[i[2]] === 3) {
-      $('.end-game-title')[0].innerHTML = 'Player X wins!'
-      $('#end-game').fadeIn(500);
+      $('.end-game-title')[0].innerHTML = 'You won!';
+      $('.end-game-container').css('display', 'flex').hide().fadeIn(500);
     } else if (arr[i[0]] + arr[i[1]] + arr[i[2]] === -3) {
-      $('.end-game-title')[0].innerHTML = 'Player O wins!'
-      $('#end-game').fadeIn(500);
+      $('.end-game-title')[0].innerHTML = 'You lose!';
+      $('.end-game-container').css('display', 'flex').hide().fadeIn(500);
     } else if (spaces === 9) {
-      $('.end-game-title')[0].innerHTML = 'It\'s a tie!'
-      $('#end-game').fadeIn(500);
+      $('.end-game-title')[0].innerHTML = 'It\'s a tie!';
+      $('.end-game-container').css('display', 'flex').hide().fadeIn(500);
     }
   });
 }
@@ -48,9 +50,9 @@ function hoverSquare() {
   for (let i = 0; i <= 8; i += 1) {
     $(`#button_${i}`).hover((e) => {
       if (firstPlayer && !$(e.target).hasClass('pressed')) {
-        e.target.innerHTML = 'X';
+        e.target.innerHTML = human;
       } else if (!firstPlayer && !$(e.target).hasClass('pressed')) {
-        e.target.innerHTML = 'O';
+        e.target.innerHTML = comp;
       }
     });
   }
@@ -68,14 +70,14 @@ function clickSquare() {
       if (firstPlayer) {
         $(e.target).addClass('active-button-first pressed');
         $(e.target).attr('disabled', true);
-        e.target.innerHTML = 'X';
+        e.target.innerHTML = human;
         firstPlayer = false;
         arr[i] += 1;
         spaces++;
       } else {
         $(e.target).addClass('active-button-second pressed');
         $(e.target).attr('disabled', true);
-        e.target.innerHTML = 'O';
+        e.target.innerHTML = comp;
         firstPlayer = true;
         arr[i] -= 1;
         spaces++;
@@ -85,6 +87,20 @@ function clickSquare() {
   }
 }
 
+// User selects either X or O as their marker
+// Box disappears after selection
+function selectIcon() {
+  $('#select-x-user').on('click', (e) => {
+    human = 'X';
+    comp = 'O';
+    $('#start-game').fadeOut(500);
+  });
+  $('#select-o-user').on('click', (e) => {
+    human = 'O';
+    comp = 'X';
+    $('#start-game').fadeOut(500);
+  });
+}
 
 
 $(document).ready(() => {
@@ -92,4 +108,5 @@ $(document).ready(() => {
   $('#end-game').hide();
   hoverSquare();
   clickSquare();
+  selectIcon();
 });

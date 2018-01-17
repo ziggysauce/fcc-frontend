@@ -14,6 +14,34 @@ html, body {
   background: #f6f6f6;
 }
 
+.start-game-container {
+  width: 50%;
+  height: 40%;
+  left: 25%;
+  top: 22%;
+  position: fixed;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background: rgba(0,0,0,0.7);
+}
+
+.start-game-title, .start-game-container p {
+  font-size: 5em;
+  color: #9bb297;
+  font-family: 'Source Sans Pro', sans-serif;
+  padding: 20px 0px;
+  margin: 0;
+}
+
+#select-x-user:hover, #select-o-user:hover {
+  cursor: pointer;
+  color: #f6f6f6;
+}
+
 /* CSS for board borders */
 .game-row {
   display: flex;
@@ -72,7 +100,7 @@ html, body {
   top: 22%;
   position: fixed;
   z-index: 2;
-  display: flex;
+  display: none;
   flex-direction: column;
   justify-content: center;
   align-items: center;
