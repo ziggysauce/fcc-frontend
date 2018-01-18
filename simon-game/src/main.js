@@ -1,0 +1,7 @@
+// Store variables
+
+
+
+$(document).ready(() => {
+
+});

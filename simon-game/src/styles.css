@@ -1,0 +1,48 @@
+/* CSS for footer */
+footer {
+	height: 75px;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  padding: 25px 0px;
+	background-color: #141414;
+}
+
+#socmedia {
+  height: 100%;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contactmedia {
+  display: flex;
+  flex-direction: row;
+}
+
+footer a {
+  font-size: 1.5em;
+}
+
+footer i {
+  width: 1em;
+  padding: 0px 10px;
+  text-align: center;
+  color: #555;
+}
+
+footer i:hover {
+  color: #F2F2F2;
+}
+
+#footbottom {
+  color: #555;
+}
+
+@media screen and (max-width:800px) {
+  .container {
+    padding-bottom: 325px;
+  }
+}
