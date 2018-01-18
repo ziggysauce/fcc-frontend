@@ -16,11 +16,11 @@ html, body {
 
 .start-game-container {
   width: 50%;
-  height: 40%;
   left: 25%;
-  top: 22%;
+  top: 15%;
   position: fixed;
   z-index: 2;
+  padding: 50px 0px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -35,6 +35,12 @@ html, body {
   font-family: 'Source Sans Pro', sans-serif;
   padding: 20px 0px;
   margin: 0;
+}
+
+@media screen and (max-width:600px) {
+  .start-game-title, .start-game-container p, .end-game-title {
+    font-size: 2em;
+  }
 }
 
 #select-x-user:hover, #select-o-user:hover {
@@ -94,12 +100,12 @@ html, body {
 }
 
 .end-game-container {
-  width: 50%;
-  height: 40%;
-  left: 25%;
+  width: 60%;
+  left: 20%;
   top: 22%;
   position: fixed;
   z-index: 2;
+  padding: 30px 0px;
   display: none;
   flex-direction: column;
   justify-content: center;
