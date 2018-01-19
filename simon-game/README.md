@@ -23,7 +23,7 @@ Build an app that is functionally similar to this: https://codepen.io/FreeCodeCa
 * User Story: I can win the game by getting a series of 20 steps correct. I am notified of my victory, then the game starts over.
 
 **Hint:** Here are mp3s you can use for each button:  
-   
+
 https://s3.amazonaws.com/freecodecamp/simonSound1.mp3,   
 https://s3.amazonaws.com/freecodecamp/simonSound2.mp3,  
 https://s3.amazonaws.com/freecodecamp/simonSound3.mp3,  

@@ -1,3 +1,23 @@
+html, body {
+  padding: 0;
+  margin: 0;
+}
+
+.game-wrapper {
+  border: 2px solid green;
+  min-width: 350px;
+  width: 35vw;
+  min-height: 350px;
+  height: 35vw;
+
+  margin: 5% auto;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 /* CSS for footer */
 footer {
 	height: 75px;
