@@ -5,8 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="src/styles.css">
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:200,400" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans+Condensed:300" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
   <body>
@@ -14,17 +13,19 @@
     <div class="game-wrapper">
       <div class="center">
         <h1>Simon Says</h1>
-        <div class="game-counter"></div>
+        <div class="game-counter">- - -</div>
         <div class="game-controls">
-          <button>Start/Restart</button>
-          <button>Strict Mode</button>
-          <span>Strict mode indicator</span>
+          <button id="start-restart-button">Start</button>
+          <button id="strict-button">Strict</button>
+          <span id="strict-indicator"></span>
         </div>
       </div>
-      <div>GREEN</div>
-      <div>RED</div>
-      <div>YELLOW</div>
-      <div>BLUE</div>
+      <div class="color-button-wrapper">
+        <div class="color-button" id="green-button"></div>
+        <div class="color-button" id="red-button"></div>
+        <div class="color-button" id="yellow-button"></div>
+        <div class="color-button" id="blue-button"></div>
+      </div>
     </div>
 
     <!-- Footer with Contact Information -->
@@ -34,6 +35,7 @@
           <a href="https://www.linkedin.com/in/daniel-nguyen-1a041495/" target="_blank"><i class="fa fa-linkedin-square"></i></a>
           <a href="https://github.com/ziggysauce" target="_blank"><i class="fa fa-github"></i></a>
           <a href="https://codepen.io/ziggysauce/" target="_blank"><i class="fa fa-codepen"></i></a>
+          <a href="https://medium.com/@ziggysauce" target="_blank"><i class="fa fa-medium"></i></a>
         </div>
         <p id="footbottom">Created by Dan Nguyen</p>
       </div>
