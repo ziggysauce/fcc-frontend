@@ -7,9 +7,9 @@ html, body {
   border: 20px solid black;
   border-radius: 100%;
   min-width: 350px;
-  width: 35vw;
+  width: 30vw;
   min-height: 350px;
-  height: 35vw;
+  height: 30vw;
 
   margin: 5% auto;
   overflow: hidden;
@@ -24,7 +24,7 @@ html, body {
 }
 
 .center {
-  position: fixed;
+  position: absolute;
   border: 20px solid black;
   border-radius: 100%;
   width: 12em;
@@ -74,7 +74,7 @@ html, body {
 }
 
 #strict-indicator {
-  position: fixed;
+  position: absolute;
   height: .75em;
   width: .75em;
   background: red;
@@ -149,7 +149,7 @@ footer {
   bottom: 0;
   left: 0;
   padding: 25px 0px;
-	background-color: #141414;
+  background-color: #141414;
 }
 
 #socmedia {
