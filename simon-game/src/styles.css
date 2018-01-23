@@ -11,7 +11,7 @@ html, body {
   min-height: 350px;
   height: 30vw;
 
-  margin: 5% auto;
+  margin: 15vh auto;
   overflow: hidden;
 
   display: flex;
@@ -58,8 +58,8 @@ html, body {
 #start-restart-button, #strict-button {
   border: 2px solid #282828;
   border-radius: 100%;
-  width: 3em;
-  height: 3em;
+  width: 3.5em;
+  height: 3.5em;
   outline: none;
   font-family: 'Open Sans Condensed', sans-serif;
   text-transform: uppercase;
@@ -78,7 +78,7 @@ html, body {
   height: .75em;
   width: .75em;
   background: red;
-  border: 1px solid #282828;
+  border: 1.5px solid #282828;
   border-radius: 100%;
 }
 
@@ -107,8 +107,8 @@ html, body {
   border-bottom: 5px solid #282828;
 }
 
-#green-button:hover {
-  background: #4ca343;
+.green-button-hover {
+  background: #4ca343 !important;
 }
 
 #red-button {
@@ -117,8 +117,8 @@ html, body {
   border-left: 5px solid #282828;
 }
 
-#red-button:hover {
-  background: #a24242;
+.red-button-hover {
+  background: #a24242 !important;
 }
 
 #yellow-button {
@@ -127,8 +127,8 @@ html, body {
   border-top: 5px solid #282828;
 }
 
-#yellow-button:hover {
-  background: #a39e43;
+.yellow-button-hover {
+  background: #a39e43 !important;
 }
 
 #blue-button {
@@ -137,8 +137,8 @@ html, body {
   border-left: 5px solid #282828;
 }
 
-#blue-button:hover {
-  background: #4363a3;
+.blue-button-hover {
+  background: #4363a3 !important;
 }
 
 /* CSS for footer */
