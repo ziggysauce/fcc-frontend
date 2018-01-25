@@ -88,6 +88,7 @@ html, body {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  border: none;
   /* z-index: -1; */
 }
 
@@ -95,6 +96,8 @@ html, body {
   height: 50%;
   width: 50%;
   box-sizing: border-box;
+  border: none;
+  outline: none;
 }
 
 .color-button:hover {
