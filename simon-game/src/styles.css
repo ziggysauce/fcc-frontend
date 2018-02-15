@@ -3,6 +3,19 @@ html, body {
   margin: 0;
 }
 
+.alerts {
+  font-family: 'Open Sans Condensed', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 5em;
+}
+
+.alert-message {
+  display: none;
+}
+
 .game-wrapper {
   border: 10px solid #282828;
   border-radius: 100%;
@@ -11,7 +24,7 @@ html, body {
   min-height: 350px;
   height: 30vw;
 
-  margin: 15vh auto;
+  margin: 8vh auto;
   overflow: hidden;
 
   display: flex;

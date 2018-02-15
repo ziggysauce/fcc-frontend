@@ -3,12 +3,12 @@ const game = {
   colors: ['.green-button','.red-button', '.yellow-button', '.blue-button'],
   currentGame: [],
   player: [],
-  sound:{
-    blue: new Audio('https://s3.amazonaws.com/freecodecamp/simonSound1.mp3'), 
-    red: new Audio('https://s3.amazonaws.com/freecodecamp/simonSound2.mp3'), 
-    yellow: new Audio('https://s3.amazonaws.com/freecodecamp/simonSound3.mp3'), 
-    green: new Audio('https://s3.amazonaws.com/freecodecamp/simonSound4.mp3')
-  },
+  sound: [
+    'https://s3.amazonaws.com/freecodecamp/simonSound1.mp3', 
+    'https://s3.amazonaws.com/freecodecamp/simonSound2.mp3', 
+    'https://s3.amazonaws.com/freecodecamp/simonSound3.mp3', 
+    'https://s3.amazonaws.com/freecodecamp/simonSound4.mp3'
+  ],
   strict: false,
 }
 
@@ -48,32 +48,32 @@ function showMoves() {
     if (i >= game.currentGame.length) {
       clearInterval(move);
     }
-  }, 500)
+  }, 600)
   
   game.player = [];
 }
 
 // Play sounds associated with each color
 function sound(color) {
-  switch(color) {
-    case'.green-button':
-      game.sound.green.play();
-      break;
-    case '.blue-button':
-      game.sound.blue.play();
-      break;
-    case '.red-button':
-      game.sound.red.play();
-      break;
-    case '.dark-button':
-      game.sound.yellow.play();
-      break;
-  };
+  let num;
+  if (color === '.green-button') {
+    num = 0;
+  } else if (color === '.red-button') {
+    num = 1;
+  } else if (color === '.yellow-button') {
+    num = 2;
+  } else {
+    num = 3;
+  }
+
+  const sound = new Audio(game.sound[num]);
+  sound.pause();
+  sound.currentTime = 0;
+  sound.play();
 }
 
 function playGame(color) {
   $(color).addClass('hover');
-  console.log(color);
   sound(color);
   setTimeout(() => {
     $(color).removeClass('hover');
@@ -83,7 +83,7 @@ function playGame(color) {
 function addToPlayer(id) {
   let input = "." + id + "-button";
   $(input).addClass('hover');
-  sound(input);
+  sound(id);
   setTimeout(() => {
     $(input).removeClass('hover');
   }, 300);
@@ -94,21 +94,31 @@ function addToPlayer(id) {
 function playerTurn(e) {
   if (game.player[game.player.length - 1] !== game.currentGame[game.player.length - 1]) {
     if (game.strict){
-      alert('Game over!');
-      newGame();
+      $('.alert-message')[0].innerHTML = 'Incorrect! Starting new game.';
+      $('.alert-message').show().fadeOut(2500);
+      setTimeout(() => {
+        newGame();
+      }, 1000);
     } else {
-      alert('Incorrect! Try again!');
-      showMoves();
+      $('.alert-message')[0].innerHTML = 'Incorrect! Try again.';
+      $('.alert-message').show().fadeOut(1500);
+      setTimeout(() => {
+        showMoves();
+      }, 1000);
     }
   } else {
     sound(e);
     let check = game.player.length === game.currentGame.length;
     if (check) {
       if (game.count == 20) {
-        alert('You win!');
+        $('.alert-message')[0].innerHTML = 'You win!';
+        $('.alert-message').show().fadeOut(1500);
       } else {
-        // alert('Next round!');
-        addCount();
+        $('.alert-message')[0].innerHTML = 'Next round!';
+        $('.alert-message').show().fadeOut(1500);
+        setTimeout(() => {
+          addCount();
+        }, 1000);
       }
     }
   }
@@ -124,8 +134,6 @@ function addCount() {
   countDisplay[0].innerHTML = game.count;
   generateMove();
 }
-
-// newGame();
 
 const start = $('#start-restart-button');
 start.on('click', () => {
